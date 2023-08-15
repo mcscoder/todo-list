@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  background-color: rgb(240, 240, 240);
+
+  .content {
+    margin: 120px 0;
+    padding: 30px 20px 20px 30px;
+    max-width: 50%;
+    width: 100%;
+    background-color: rgba(72, 143, 13, 0.822);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5);
+
+    .title {
+      display: flex;
+      justify-content: center;
+
+      h1 {
+        color: rgb(240, 240, 240);
+      }
+    }
+
+    .todo-section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+
+      .form-container {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+
+        form {
+          display: flex;
+
+          input {
+            margin-right: 10px;
+            padding: 7px 15px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.6);
+            outline: none;
+
+            &:focus {
+              outline: 2px solid rgba(0, 0, 0, 0.4);
+            }
+          }
+
+          button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: rgb(255, 255, 255);
+            background-color: rgba(255, 165, 0, 0.8);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            &:hover {
+              background-color: rgb(255, 165, 0);
+            }
+          }
+        }
+      }
+
+      .task-list {
+        display: flex;
+        flex-direction: column;
+
+        .task {
+          margin-top: 10px;
+          display: flex;
+          background-color: rgba(255, 255, 255, 0.5);
+          padding: 12px 15px;
+          border: none;
+          border-radius: 15px;
+
+          .task-title {
+            flex: 1;
+            margin-right: 10px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: rgb(198, 0, 0);
+            background-color: transparent;
+            border: none;
+            border-radius: 7px;
+
+            &:focus {
+              outline: 2px solid rgba(0, 0, 0, 0.5);
+              outline-offset: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
