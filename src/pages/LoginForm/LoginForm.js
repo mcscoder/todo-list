@@ -64,6 +64,10 @@ function LoginForm() {
     newProfiles.splice(index, 1);
     setProfiles(newProfiles);
     localStorage.setItem(localStorageKey.profiles, JSON.stringify(newProfiles));
+
+    let tasks = JSON.parse(localStorage.getItem(localStorageKey.tasks));
+    tasks.splice(index, 1);
+    localStorage.setItem(localStorageKey.tasks, JSON.stringify(tasks));
   };
 
   console.log("re-render");

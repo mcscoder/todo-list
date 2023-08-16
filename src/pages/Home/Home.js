@@ -34,11 +34,32 @@ function Home() {
     let globalTasks = [...tasks];
     globalTasks[profile] = curTasks;
     setTasks(globalTasks);
+    setNewTask("");
+  };
+
+  const handleDeleteTask = (index) => {
+    let curTasks = [...tasks[profile]];
+    let globalTasks = [...tasks];
+    curTasks.splice(index, 1);
+    globalTasks[profile] = curTasks;
+    setTasks(globalTasks);
+
+    console.log(globalTasks);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem(localStorageKey.profile);
+    window.location.reload();
   };
 
   return (
     <div className={cx("container")}>
       <div className={cx("content")}>
+        <div className={cx("logout-section")}>
+          <button className={cx("logout-btn")} onClick={handleLogout}>
+            <i className="fa-solid fa-left-long"></i>
+          </button>
+        </div>
         <div className={cx("title")}>
           <h1>TODO LIST</h1>
         </div>
@@ -55,7 +76,14 @@ function Home() {
           </div>
           <div className={cx("task-list")}>
             {tasks[profile].map((task, index) => {
-              return <Task key={index} task={task} />;
+              return (
+                <Task
+                  key={task.title}
+                  task={task}
+                  index={index}
+                  handleDeleteTask={handleDeleteTask}
+                />
+              );
             })}
           </div>
         </div>

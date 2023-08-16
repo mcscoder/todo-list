@@ -21,4 +21,37 @@
       outline: 2px solid rgba(0, 0, 0, 0.5);
     }
   }
+
+  .isEditing-true {
+    outline: 2px solid rgba(0, 0, 0, 0.5);
+  }
+
+  .isEditing-false {
+    pointer-events: none;
+  }
+
+  .isCompleted-true {
+    text-decoration-line: line-through;
+    font-style: italic;
+    color: rgba(100, 0, 0, 0.5);
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    margin-left: 8px;
+    font-size: 1.3rem;
+  }
+
+  .done-btn {
+    color: rgb(0, 173, 0);
+  }
+
+  .edit-btn {
+    color: rgb(192, 125, 0);
+  }
+
+  .delete-btn {
+    color: rgb(190, 0, 0);
+  }
 }
